@@ -1,6 +1,6 @@
 <template>
 
-  <div v-if="Product" class="container my-5 py-5">
+  <div v-if="product" class="container my-5 py-5">
 
       <section class="text-center">
           <h3 class="mb-5 font-weight-bold">Product Details</h3>
@@ -8,8 +8,7 @@
           <div class="row align-items-center gx-5">
 
               <div class="col-6">
-                  <!-- <img src:="product.image" alt="" class="img-fluid"> -->
-                  <img src="product.image" alt="" class="img-fluid">
+                  <img v-bind:src="product.image" alt="" class="img-fluid"/> 
               </div>
 
               <div class="col-lg-6 text-center text-lg-start">
@@ -50,12 +49,11 @@ export default {
         ...mapActions(['getOneProduct', 'getProducts', 'cleanup', 'addProductToCart'])
     },
     computed: {
-        ...mapGetters(['products'])
+        ...mapGetters(['product'])
     },
     created() {
      
         this.getOneProduct(this.id)
-        console.log("sdkfljdsf", this);
 
     },
     destroyed(){

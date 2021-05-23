@@ -1,5 +1,7 @@
 import axios from '@/axios'
 
+//const Product = require('../../../../API/models/products/productSchema');
+
 export default {
     state: {
         // lista med produkter i en array
@@ -38,9 +40,9 @@ export default {
     // denna verkar inte skicka vidare så att jag kan visa i min produktdetails. varför ????
     getOneProduct: async ({commit}, id) => {
         
-        const res = await axios.get('products/' +id)
-        console.log(res.data[0]);
-        commit('SET_PRODUCT', res.data[0])
+        const res = await axios.get('products/' + id)
+        console.log("RÄTT DATA", res.data);
+        commit('SET_PRODUCT', res.data)
 
     },
     cleanup: ({commit}) => {

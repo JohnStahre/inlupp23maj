@@ -6,7 +6,7 @@ const Product = require('./productSchema');
 
 // missade först denna funktion
 exports.getOneProduct = (req, res) => {
-    console.log("Hej")
+
     Product.findOne({ _id: req.params.id })
       .then(data => {
         return res.status(200).json(data)
@@ -15,6 +15,7 @@ exports.getOneProduct = (req, res) => {
   }
 
 exports.getProducts = (req, res) => {
+
     Product.find({}, (err, data) => {
         if(err) {
             return res.status(500).json({
