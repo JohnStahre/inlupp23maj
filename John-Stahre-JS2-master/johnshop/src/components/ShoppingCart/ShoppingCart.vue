@@ -10,16 +10,16 @@
         </div>
         <div class="dropdown-divider"></div>
     </div>
-    <div>  
+
+    
     <div class="p-2 d-flex justify-content-between align-items-center">
+        <div>  
         <div class="total-price">
-            Totalt: <span>100</span>
-            
+            Total: <span>{{shoppingCartTotal}} USD</span> 
         </div>
-       
-        <button class="btn btn-primary">Checkout</button>
+        <small class="text-muted">inc. tax</small>  
     </div>
-     <small class="text-muted">inc. tax</small>
+     <button class="btn btn-primary">Checkout</button>
   </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
         ShoppingCartProduct
     },
     computed: {
-        ...mapGetters(['ShoppingCart'])
+        ...mapGetters(['ShoppingCart', 'shoppingCartTotal'])
     }
 
 }
