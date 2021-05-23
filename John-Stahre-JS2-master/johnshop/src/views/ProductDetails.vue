@@ -17,13 +17,16 @@
                   <h2 class="text-center font-weight-bold">{{ product.name}}</h2>
                     <div class="mb-5">
                         <h5 class="mb-3">Description</h5>
+                       
+                        <p>{{product.short}}</p>
                         <p>{{product.desc}}</p>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center"> 
                   <h3><span class="text-warning">{{ product.price }}</span>SEK</h3>
-                  <button class="btn btn-primary" >add to cart</button>
+                  <!-- <button class="btn btn-primary" >add to cart</button> -->
+                   <button class=" btn btn-primary btn-lg" @click="addProductToCart({ product, quantity })" >Add to Cart</button>
                 </div>
               </div>
 
