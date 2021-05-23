@@ -48,6 +48,11 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     name: 'ProductDetails',
     props: ['id'],
+    data(){
+        return {
+            quantity: 1
+        }
+    },
     methods: {
         ...mapActions(['getOneProduct', 'getProducts', 'cleanup', 'addProductToCart'])
     },

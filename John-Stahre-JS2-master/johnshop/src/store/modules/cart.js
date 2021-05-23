@@ -4,7 +4,14 @@ export default {
         cart:[]
     },
     getters: {
-        shoppingCart: state => state.cart
+        shoppingCart: state => state.cart,
+        cartItemCount: state => {
+            let counter = 0
+            state.cart.forEach(item => {
+                counter += item.quantity
+            })
+            return counter
+        }
     },
     mutations: {
         // om den finns ska det inte läggas till en ny
@@ -12,7 +19,7 @@ export default {
             
         ADD_TO_CART: (state, { product, quantity}) => {
             
-            let exists = state.cart.find(item => item.product.id === product.id)
+            let exists = state.cart.find(item => item.product._id === product._id)
             // om den finns
             if(exists) {
                 console.log(quantity)

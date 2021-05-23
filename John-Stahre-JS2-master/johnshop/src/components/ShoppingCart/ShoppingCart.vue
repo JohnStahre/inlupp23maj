@@ -1,6 +1,7 @@
 <template>
   <div>
       <!-- shoppingcarten läggs i navbar -->
+      <ShoppingCartProduct v-for="item in shoppingCart" :key="item.product._id" :item="item"/>
     <div>
         <div v-if="ShoppingCart.length < 1">
             <div class="p-2 d-flex justify-content-center align-items-center">
@@ -25,8 +26,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import ShoppingCartProduct from './ShoppingCartProduct'
 export default {
     name: 'ShoppingCart',
+    components: {
+        ShoppingCartProduct
+    },
     computed: {
         ...mapGetters(['ShoppingCart'])
     }
