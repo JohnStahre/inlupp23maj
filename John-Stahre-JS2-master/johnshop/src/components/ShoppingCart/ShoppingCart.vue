@@ -1,9 +1,10 @@
 <template>
   <div>
       <!-- shoppingcarten läggs i navbar -->
-      <ShoppingCartProduct v-for="item in shoppingCart" :key="item.product._id" :item="item"/>
+      <ShoppingCartProduct v-for="item in shoppingCart" :key="item.products._id" :item="item" />
     <div>
-        <div v-if="ShoppingCart.length < 1">
+        <!-- <div v-if="ShoppingCart.length < 1"> -->
+        <div>
             <div class="p-2 d-flex justify-content-center align-items-center">
                 EMPTY
                 </div>    
